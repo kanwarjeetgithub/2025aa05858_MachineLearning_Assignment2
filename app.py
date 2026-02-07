@@ -27,7 +27,7 @@ if os.path.exists(sample_path):
             mime="text/csv"
         )
 else:
-    st.info("Sample file not found in repo. Please add data/sample_test_data.csv")
+    st.info("Sample file not found in repo. Please add data/breast_cancer_dataset.csv")
 
 # Model paths
 model_paths = {
