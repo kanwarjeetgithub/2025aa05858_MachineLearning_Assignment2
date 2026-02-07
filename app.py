@@ -12,6 +12,10 @@ from sklearn.metrics import (
 )
 
 st.title("ML Classification Model Comparison App")
+# -----------------------------
+# 📥 Download Sample Test Data
+# -----------------------------
+st.subheader("Download Sample Test File")
 
 # Model paths
 model_paths = {
