@@ -1,10 +1,5 @@
-1. GitHub Repository Link containing
-o Complete source code
-o requirements.txt
-o A clear README.md
-2. Live Streamlit App Link
-o Deployed using Streamlit Community Cloud
-o Must open an interactive frontend when clicked
-3. Screenshot
-o Upload screenshot of assignment execution on BITS Virtual Lab
-4. The Github README content (details mentioned in Section 3 - Step 5) should also be part of the submitted PDF fi le.
+streamlit
+scikit-learn
+pandas
+numpy
+xgboost
