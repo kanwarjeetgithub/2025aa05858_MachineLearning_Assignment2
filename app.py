@@ -16,6 +16,18 @@ st.title("ML Classification Model Comparison App")
 # 📥 Download Sample Test Data
 # -----------------------------
 st.subheader("Download Sample Test File")
+sample_path = "data/sample_test_data.csv"
+
+if os.path.exists(sample_path):
+    with open(sample_path, "rb") as f:
+        st.download_button(
+            label="Download Sample CSV",
+            data=f,
+            file_name="sample_test_data.csv",
+            mime="text/csv"
+        )
+else:
+    st.info("Sample file not found in repo. Please add data/sample_test_data.csv")
 
 # Model paths
 model_paths = {
