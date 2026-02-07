@@ -23,7 +23,7 @@ if os.path.exists(sample_path):
         st.download_button(
             label="Download Sample CSV",
             data=f,
-            file_name="sample_test_data.csv",
+            file_name="breast_cancer_dataset.csv",
             mime="text/csv"
         )
 else:
