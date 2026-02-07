@@ -2,11 +2,18 @@ import streamlit as st
 import pandas as pd
 import pickle
 import os
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-st.title("Machine Learning Model Comparison App")
+from sklearn.metrics import (
+    accuracy_score, precision_score, recall_score,
+    f1_score, confusion_matrix, roc_auc_score,
+    matthews_corrcoef
+)
 
-# Model dictionary
+st.title("ML Classification Model Comparison App")
+
+# Model paths
 model_paths = {
     "Logistic Regression": "model/logistic.pkl",
     "Decision Tree": "model/decision_tree.pkl",
@@ -18,18 +25,17 @@ model_paths = {
 
 # Sidebar
 st.sidebar.header("Upload Dataset")
-
-uploaded_file = st.sidebar.file_uploader("Upload CSV File", type=["csv"])
+uploaded_file = st.sidebar.file_uploader("Upload CSV", type=["csv"])
 
 model_name = st.sidebar.selectbox("Select Model", list(model_paths.keys()))
 
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
-    
+
     st.subheader("Dataset Preview")
     st.write(df.head())
 
-    # Assume last column is target
+    # Last column as target
     X = df.iloc[:, :-1]
     y = df.iloc[:, -1]
 
@@ -42,22 +48,55 @@ if uploaded_file is not None:
 
         y_pred = model.predict(X)
 
-        st.subheader("Model Selected:")
-        st.write(model_name)
-
         # Metrics
         acc = accuracy_score(y, y_pred)
         prec = precision_score(y, y_pred)
         rec = recall_score(y, y_pred)
         f1 = f1_score(y, y_pred)
+        mcc = matthews_corrcoef(y, y_pred)
 
-        st.subheader("Evaluation Metrics")
+        try:
+            auc = roc_auc_score(y, model.predict_proba(X)[:,1])
+        except:
+            auc = 0
+
+        st.subheader(f"Model Selected: {model_name}")
+
+        # Metrics display
+        st.write("### Evaluation Metrics")
         st.write(f"Accuracy: {acc:.3f}")
         st.write(f"Precision: {prec:.3f}")
         st.write(f"Recall: {rec:.3f}")
         st.write(f"F1 Score: {f1:.3f}")
+        st.write(f"AUC Score: {auc:.3f}")
+        st.write(f"MCC Score: {mcc:.3f}")
 
-        st.subheader("Confusion Matrix")
-        st.write(confusion_matrix(y, y_pred))
+        # Confusion Matrix Heatmap
+        st.write("### Confusion Matrix")
+
+        cm = confusion_matrix(y, y_pred)
+        fig, ax = plt.subplots()
+        sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", ax=ax)
+
+        plt.xlabel("Predicted")
+        plt.ylabel("Actual")
+        plt.title("Confusion Matrix")
+
+        st.pyplot(fig)
+
+        # Metrics Bar Chart
+        st.write("### Metrics Visualization")
+
+        metrics = [acc, prec, rec, f1, auc, mcc]
+        labels = ["Accuracy", "Precision", "Recall", "F1", "AUC", "MCC"]
+
+        fig2, ax2 = plt.subplots()
+        sns.barplot(x=labels, y=metrics, ax=ax2)
+
+        plt.xticks(rotation=30)
+        plt.title("Model Performance Metrics")
+
+        st.pyplot(fig2)
+
     else:
         st.error("Model file not found! Run train_models.py first.")
