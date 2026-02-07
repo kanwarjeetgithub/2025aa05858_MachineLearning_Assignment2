@@ -54,22 +54,22 @@ if uploaded_file is not None:
         rec = recall_score(y, y_pred)
         f1 = f1_score(y, y_pred)
         mcc = matthews_corrcoef(y, y_pred)
-
+        
         try:
             auc = roc_auc_score(y, model.predict_proba(X)[:,1])
         except:
             auc = 0
-
+        
         st.subheader(f"Model Selected: {model_name}")
-
-        # Metrics display
-        st.write("### Evaluation Metrics")
-        st.write(f"Accuracy: {acc:.3f}")
-        st.write(f"Precision: {prec:.3f}")
-        st.write(f"Recall: {rec:.3f}")
-        st.write(f"F1 Score: {f1:.3f}")
-        st.write(f"AUC Score: {auc:.3f}")
-        st.write(f"MCC Score: {mcc:.3f}")
+        
+        # 📊 Metrics Table
+        metrics_df = pd.DataFrame({
+            "Metric": ["Accuracy", "Precision", "Recall", "F1 Score", "AUC Score", "MCC Score"],
+            "Value": [acc, prec, rec, f1, auc, mcc]
+        })
+        
+        st.write("### Evaluation Metrics Table")
+        st.dataframe(metrics_df, use_container_width=True)
 
         # Confusion Matrix Heatmap
         st.write("### Confusion Matrix")
