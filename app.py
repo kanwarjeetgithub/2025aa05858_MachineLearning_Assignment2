@@ -16,7 +16,7 @@ st.title("ML Classification Model Comparison App")
 # 📥 Download Sample Test Data
 # -----------------------------
 st.subheader("Download Sample Test File")
-sample_path = "data/sample_test_data.csv"
+sample_path = "data/breast_cancer_dataset.csv"
 
 if os.path.exists(sample_path):
     with open(sample_path, "rb") as f:
