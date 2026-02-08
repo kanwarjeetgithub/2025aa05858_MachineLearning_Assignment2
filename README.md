@@ -31,15 +31,14 @@ All trained models are saved as .pkl files and loaded in the Streamlit applicati
 
 📈 **Comparison Table with the evaluation metrics**
 
-<img width="590" height="141" alt="image" src="https://github.com/user-attachments/assets/318d6a8d-0d2e-4b2e-ac61-465024268193" />
-
-🔎 Observations on Model Performance
-
-Model	Observation  
-Logistic Regression - Good baseline performance and stable results.  
-Decision Tree	 - Easy to interpret but may overfit.  
-KNN	 - Works well but sensitive to feature scaling.  
-Naive Bayes	 - Fast and simple; performs well on independent features.  
-Random Forest	 - Strong performance and reduces overfitting.  
-XGBoost	 - Often achieves the best accuracy due to boosting technique.  
+<img width="590" height="141" alt="image" src="https://github.com/user-attachments/assets/318d6a8d-0d2e-4b2e-ac61-465024268193" />  
+  
+🔎 **Observations on Model Performance**    
+        **Model	Observation**    
+          **Logistic Regression** - Good baseline performance and stable results.  
+          **Decision Tree**	 - Easy to interpret but may overfit.  
+          **KNN**	 - Works well but sensitive to feature scaling.  
+          **Naive Bayes**	 - Fast and simple; performs well on independent features.  
+          **Random Forest**	 - Strong performance and reduces overfitting.  
+          **XGBoost**	 - Often achieves the best accuracy due to boosting technique.  
 
