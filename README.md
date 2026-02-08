@@ -30,3 +30,7 @@ The following six models were trained on the same dataset:
 All trained models are saved as .pkl files and loaded in the Streamlit application for predictions.  
 
 📈 **Comparison Table with the evaluation metrics**
+
+<img width="590" height="141" alt="image" src="https://github.com/user-attachments/assets/318d6a8d-0d2e-4b2e-ac61-465024268193" />
+
+
