@@ -50,14 +50,17 @@ if uploaded_file is not None:
 
     st.subheader("Dataset Preview")
     st.write(df.head())
-
-    # Last column as target
-    X = df.iloc[:, :-1]
-    y = df.iloc[:, -1]
-    
     # Load feature names used during training
     with open("model/feature_names.pkl", "rb") as f:
         feature_names = pickle.load(f)
+        
+    # If target column exists
+    if df.shape[1] > len(feature_names):
+        X = df.iloc[:, :-1]
+        y = df.iloc[:, -1]
+    else:
+        X = df.copy()
+        y = None
     
     # Add missing columns (if any)
     for col in feature_names:
