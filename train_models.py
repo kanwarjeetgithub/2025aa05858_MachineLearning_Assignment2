@@ -39,8 +39,6 @@ for file_name, model in models.items():
     with open(f"model/{file_name}", "wb") as f:
         pickle.dump(model, f)
 
-import pickle
-
 # Save feature names Scikit-learn DecisionTree/RandomForest/XGBoost require exact same column names + order.
 with open("model/feature_names.pkl", "wb") as f:
     pickle.dump(X_train.columns.tolist(), f)
