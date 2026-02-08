@@ -1,9 +1,9 @@
 
-📌 Problem Statement
+📌 **Problem Statement**
 
 The objective of this project is to build, evaluate, and deploy multiple machine learning classification models using a real-world dataset. The solution demonstrates an end-to-end workflow including model training, evaluation, saving trained models, and building an interactive Streamlit web application for predictions.
 
-📊 Dataset Description
+📊 **Dataset Description**
 
 This project uses the Breast Cancer Wisconsin Dataset (from Scikit-learn).  
 Key characteristics:  
@@ -18,7 +18,7 @@ Well-suited for classification model comparison
 Target column:  
 target → 0 or 1  
 
-🤖 Machine Learning Models Implemented
+🤖 **Machine Learning Models Implemented**
 
 The following six models were trained on the same dataset:  
 --Logistic Regression  
