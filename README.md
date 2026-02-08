@@ -17,3 +17,14 @@ Contains >12 features
 Well-suited for classification model comparison  
 Target column:  
 target → 0 or 1  
+
+🤖 Machine Learning Models Implemented
+
+The following six models were trained on the same dataset:  
+--Logistic Regression  
+--Decision Tree Classifier  
+--K-Nearest Neighbors (KNN)  
+--Naive Bayes (GaussianNB)  
+--Random Forest (Ensemble)  
+--XGBoost (Ensemble)  
+All trained models are saved as .pkl files and loaded in the Streamlit application for predictions.  
