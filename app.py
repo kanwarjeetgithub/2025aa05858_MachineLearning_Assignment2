@@ -54,6 +54,18 @@ if uploaded_file is not None:
     # Last column as target
     X = df.iloc[:, :-1]
     y = df.iloc[:, -1]
+    
+    # Load feature names used during training
+    with open("model/feature_names.pkl", "rb") as f:
+        feature_names = pickle.load(f)
+    
+    # Add missing columns (if any)
+    for col in feature_names:
+        if col not in X.columns:
+            X[col] = 0
+    
+    # Remove extra columns & reorder correctly
+    X = X[feature_names]
 
     # Load model
     model_path = model_paths[model_name]
