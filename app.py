@@ -76,58 +76,70 @@ if uploaded_file is not None:
     if os.path.exists(model_path):
         with open(model_path, "rb") as f:
             model = pickle.load(f)
+        if y is not None:
+            try:
+                    y_pred = model.predict(X)
+                    # Metrics
+                    acc = accuracy_score(y, y_pred)
+                    prec = precision_score(y, y_pred)
+                    rec = recall_score(y, y_pred)
+                    f1 = f1_score(y, y_pred)
+                    mcc = matthews_corrcoef(y, y_pred)
+                    
+                    try:
+                        auc = roc_auc_score(y, model.predict_proba(X)[:,1])
+                    except:
+                        auc = 0
+                    
+                    st.subheader(f"Model Selected: {model_name}")
+                    
+                    # 📊 Metrics Table
+                    metrics_df = pd.DataFrame({
+                        "Metric": ["Accuracy", "Precision", "Recall", "F1 Score", "AUC Score", "MCC Score"],
+                        "Value": [acc, prec, rec, f1, auc, mcc]
+                    })
+                    st.write("### Evaluation Metrics Table")
+                    st.dataframe(metrics_df, use_container_width=True)
+                    # Confusion Matrix Heatmap
+                    st.write("### Confusion Matrix")
+                    cm = confusion_matrix(y, y_pred)
+                    fig, ax = plt.subplots()
+                    sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", ax=ax)
+                    plt.xlabel("Predicted")
+                    plt.ylabel("Actual")
+                    plt.title("Confusion Matrix")
+                    st.pyplot(fig)
 
-        y_pred = model.predict(X)
+                    # Metrics Bar Chart
+                    st.write("### Metrics Visualization")
 
-        # Metrics
-        acc = accuracy_score(y, y_pred)
-        prec = precision_score(y, y_pred)
-        rec = recall_score(y, y_pred)
-        f1 = f1_score(y, y_pred)
-        mcc = matthews_corrcoef(y, y_pred)
-        
-        try:
-            auc = roc_auc_score(y, model.predict_proba(X)[:,1])
-        except:
-            auc = 0
-        
-        st.subheader(f"Model Selected: {model_name}")
-        
-        # 📊 Metrics Table
-        metrics_df = pd.DataFrame({
-            "Metric": ["Accuracy", "Precision", "Recall", "F1 Score", "AUC Score", "MCC Score"],
-            "Value": [acc, prec, rec, f1, auc, mcc]
-        })
-        
-        st.write("### Evaluation Metrics Table")
-        st.dataframe(metrics_df, use_container_width=True)
+                    metrics = [acc, prec, rec, f1, auc, mcc]
+                    labels = ["Accuracy", "Precision", "Recall", "F1", "AUC", "MCC"]
 
-        # Confusion Matrix Heatmap
-        st.write("### Confusion Matrix")
+                    fig2, ax2 = plt.subplots()
+                    sns.barplot(x=labels, y=metrics, ax=ax2)
 
-        cm = confusion_matrix(y, y_pred)
-        fig, ax = plt.subplots()
-        sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", ax=ax)
+                    plt.xticks(rotation=30)
+                    plt.title("Model Performance Metrics")
 
-        plt.xlabel("Predicted")
-        plt.ylabel("Actual")
-        plt.title("Confusion Matrix")
+                    st.pyplot(fig2)
 
-        st.pyplot(fig)
-
-        # Metrics Bar Chart
-        st.write("### Metrics Visualization")
-
-        metrics = [acc, prec, rec, f1, auc, mcc]
-        labels = ["Accuracy", "Precision", "Recall", "F1", "AUC", "MCC"]
-
-        fig2, ax2 = plt.subplots()
-        sns.barplot(x=labels, y=metrics, ax=ax2)
-
-        plt.xticks(rotation=30)
-        plt.title("Model Performance Metrics")
-
-        st.pyplot(fig2)
-
+    
+            except:
+                st.warning("Target column format not compatible for metric calculation.")
+        else:
+            st.info("No target column found. Showing predictions only.")
     else:
         st.error("Model file not found! Run train_models.py first.")
+
+        
+        
+        
+
+        
+
+        
+
+        
+
+        
