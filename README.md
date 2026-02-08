@@ -28,3 +28,5 @@ The following six models were trained on the same dataset:
 --Random Forest (Ensemble)  
 --XGBoost (Ensemble)  
 All trained models are saved as .pkl files and loaded in the Streamlit application for predictions.  
+
+📈 **Comparison Table with the evaluation metrics**
