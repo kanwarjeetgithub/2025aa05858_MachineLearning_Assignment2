@@ -59,3 +59,15 @@ All trained models are saved as .pkl files and loaded in the Streamlit applicati
         │   │-- xgboost.pkl
         │-- data/
         │   │--breast_cancer_dataset.csv
+
+🔹 Streamlit App Features  
+
+  *Upload test dataset (CSV)      
+  *Select model from dropdown      
+    *Display:       
+      *Evaluation metrics        
+      *Confusion matrix        
+      *Predictions      
+
+  <img width="1163" height="545" alt="image" src="https://github.com/user-attachments/assets/d6f83c84-dd2c-4f82-8924-4cef37aaa741" />
+
