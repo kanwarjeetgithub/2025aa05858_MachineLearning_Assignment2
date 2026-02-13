@@ -69,5 +69,22 @@ All trained models are saved as .pkl files and loaded in the Streamlit applicati
       *Confusion matrix        
       *Predictions      
 
-  <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/d6f83c84-dd2c-4f82-8924-4cef37aaa741" />
+  <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/d6f83c84-dd2c-4f82-8924-4cef37aaa741" />    
+  <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/f9e34888-2fe3-4c03-90ca-160f3df9928f" />    
+  <img width="482" height="458" alt="image" src="https://github.com/user-attachments/assets/af38e99f-2527-4db4-b9e6-762d3866bb80" />    
+
+  🔹 How to Run the Project    
+       &nbsp;Deploy on Streamlit Community Cloud    
+          &nbsp;&nbsp;&nbsp;&nbsp;1. Go to https://streamlit.io/cloud    
+          &nbsp;&nbsp;&nbsp;&nbsp;2. Sign in using GitHub account    
+          &nbsp;&nbsp;&nbsp;&nbsp;3. Click “New App”    
+          &nbsp;&nbsp;&nbsp;&nbsp;4. Select your repository    
+          &nbsp;&nbsp;&nbsp;&nbsp;5. Choose branch (usually main)    
+          &nbsp;&nbsp;&nbsp;&nbsp;6. Select app.py    
+          &nbsp;&nbsp;&nbsp;&nbsp;7. Click Deploy     
+           
+
+
+
+  
 
