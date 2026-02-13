@@ -69,5 +69,5 @@ All trained models are saved as .pkl files and loaded in the Streamlit applicati
       *Confusion matrix        
       *Predictions      
 
-  <img width="1163" height="545" alt="image" src="https://github.com/user-attachments/assets/d6f83c84-dd2c-4f82-8924-4cef37aaa741" />
+  <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/d6f83c84-dd2c-4f82-8924-4cef37aaa741" />
 
