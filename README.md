@@ -41,4 +41,21 @@ All trained models are saved as .pkl files and loaded in the Streamlit applicati
           **Naive Bayes**	 - Fast and simple; performs well on independent features.  
           **Random Forest**	 - Strong performance and reduces overfitting.  
           **XGBoost**	 - Often achieves the best accuracy due to boosting technique.  
+          
+🔹 **Project Structure**
 
+      project-folder/
+        │-- app.py
+        │-- requirements.txt
+        │-- README.md
+        │-- train_models.py
+        │-- model/
+        │   │-- decision_tree.pkl
+        │   │-- feature_names.pkl
+        │   │-- knn.pkl
+        │   │-- logistic.pkl
+        │   │-- naive_bayes.pkl
+        │   │-- random_forest.pkl
+        │   │-- xgboost.pkl
+        │-- data/
+        │   │--breast_cancer_dataset.csv
