@@ -68,10 +68,9 @@ All trained models are saved as .pkl files and loaded in the Streamlit applicati
       *Evaluation metrics        
       *Confusion matrix        
       *Predictions      
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/c08885ad-2768-4678-8233-fda655b18988" /> 
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/4444054d-42ec-4264-bf4d-fd60220b6598" />
 
-  <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/d6f83c84-dd2c-4f82-8924-4cef37aaa741" />    
-  <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/f9e34888-2fe3-4c03-90ca-160f3df9928f" />    
-  <img width="482" height="458" alt="image" src="https://github.com/user-attachments/assets/af38e99f-2527-4db4-b9e6-762d3866bb80" />    
 
   🔹 How to Run the Project       
       
