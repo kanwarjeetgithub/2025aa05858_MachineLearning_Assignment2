@@ -11,7 +11,7 @@ from sklearn.metrics import (
     matthews_corrcoef
 )
 
-st.title("ML Classification Model Comparison App")
+st.title("Breast Cancer Wisconsin Classification Model Comparison App")
 # -----------------------------
 # 📥 Download Sample Test Data
 # -----------------------------
