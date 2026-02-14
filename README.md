@@ -100,6 +100,16 @@ All trained models are saved as .pkl files and loaded in the Streamlit applicati
 **GitHub Repository:**  
 [https://github.com/kanwarjeetgithub/2025aa05858_MachineLearning_Assignment2](https://github.com/kanwarjeetgithub/2025aa05858_MachineLearning_Assignment2)
 
+## 🔹 BITS Lab screen shots.
+<img width="904" height="504" alt="image" src="https://github.com/user-attachments/assets/979a967b-eab6-4b44-a253-7ca10f508780" />
+<img width="904" height="462" alt="image" src="https://github.com/user-attachments/assets/3261fb01-8b49-4fb3-b3bc-3eff41680f35" />
+<img width="904" height="545" alt="image" src="https://github.com/user-attachments/assets/25fe2efc-c486-4f11-86af-8f136805d788" />
+<img width="904" height="489" alt="image" src="https://github.com/user-attachments/assets/018b8026-4740-4415-9694-4fff1c8ec6b0" />
+
+
+
+
+
 
            
 
